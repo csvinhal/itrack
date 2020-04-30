@@ -1,0 +1,29 @@
+<div class="row mb-3" [@loadingPage]>
+  <div class="col-12 mt-2 mb-4">
+    <h3 class="font-weight-bold border-top pt-3">Featured Artists</h3>
+  </div>
+  <div class="col-12">
+    <div
+      class="d-flex flex-row align-items-start justify-content-between overflow-auto"
+    >
+      <div *ngFor="let featuredArtist of artist?.featuredArtists" class="featured__detail mx-2">
+        <div class="thumbnail-container rounded-circle">
+          <img
+            *ngIf="featuredArtist?.profileImage"
+            [src]="featuredArtist?.profileImage"
+            alt="Thumbnail do artista"
+          />
+          <div
+            *ngIf="!featuredArtist?.profileImage"
+            class="text-secondary text-uppercase border w-100 h-100 rounded-circle d-flex justify-content-center align-items-center"
+          >
+            {{ artist.name }}
+          </div>
+        </div>
+        <div class="text-center font-weight-bold mt-2">
+          {{ featuredArtist.name }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

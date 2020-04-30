@@ -1,0 +1,13 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+.about__complementy-info > div {
+  border-bottom: 1px solid #dee2e6;
+}
+
+@include media-breakpoint-up(md) {
+  .about__complementy-info > div {
+    border-bottom: none;
+  }
+}

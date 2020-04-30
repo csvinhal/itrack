@@ -1,0 +1,20 @@
+<app-artist-header [artist]="artist"></app-artist-header>
+
+<div class="container container-md mt-1 px-3">
+  <button type="button" class="btn btn-link" (click)="onClick()">
+    <i class="ml-1 fas fa-arrow-left" aria-hidden="true"></i>
+    Voltar
+  </button>
+
+  <app-artist-about [artist]="artist"></app-artist-about>
+
+  <app-artist-album
+    *ngFor="let album of artist?.albuns"
+    [album]="album"
+  ></app-artist-album>
+
+  <app-artist-featured
+    *ngIf="artist?.featuredArtists && artist?.featuredArtists.length"
+    [artist]="artist"
+  ></app-artist-featured>
+</div>

@@ -1,0 +1,24 @@
+<div class="loading__container">
+  <div class="loading__content" [ngClass]="{ 'is-loading': loading }">
+    <ng-container *ngTemplateOutlet="contents || content"></ng-container>
+    <ng-template #content>
+      <ng-content></ng-content>
+    </ng-template>
+  </div>
+
+  <div
+    class="loading__loader"
+    [ngClass]="{ 'is-loading': loading, 'is-full-screen': blockWindow }"
+  >
+    <div class="lds-roller">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</div>

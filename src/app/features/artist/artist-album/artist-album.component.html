@@ -1,0 +1,40 @@
+<div class="row mt-4" [@loadingPage]>
+  <div class="col-5 col-md-4">
+    <div class="album__cover-image rounded">
+      <img [src]="album.coverImage" [alt]="'Foto do album ' + album.name" />
+    </div>
+
+    <small
+      *ngIf="album.tracks"
+      class="text-secondary font-weight-bold mt-2 d-none d-md-block"
+      >{{ album.tracks.length }} song{{
+        album.tracks.length !== 1 ? "s" : ""
+      }}</small
+    >
+  </div>
+
+  <div class="col-7	d-block d-md-none">
+    <h4 class="font-weight-bolder">{{ album.name }}</h4>
+  </div>
+
+  <div class="col-12 col-md-8">
+    <h4 class="font-weight-bolder d-none d-md-block">{{ album.name }}</h4>
+
+    <a
+      [href]="album?.url"
+      target="_blank"
+      class="btn btn-outline-primary mt-4 mt-md-2 mb-4"
+    >
+      Listen on Apple Music
+      <i class="ml-1 fas fa-arrow-up icon-rotate-45" aria-hidden="true"></i>
+    </a>
+
+    <div class="album__tracks-list">
+      <app-artist-track
+        *ngFor="let track of album?.tracks; let i = index"
+        [track]="track"
+        [index]="i"
+      ></app-artist-track>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="header__container">
+  <img
+    *ngIf="artist?.profileImage"
+    [src]="artist?.profileImage"
+    alt="Baner do artista selecionado"
+    aria-hidden="true"
+  />
+
+  <div
+    *ngIf="!artist?.profileImage"
+    class="text-secondary text-uppercase text-truncate border w-100 h-100 d-flex justify-content-center align-items-center"
+  >
+    {{ artist.name }}
+  </div>
+</div>

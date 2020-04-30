@@ -1,0 +1,38 @@
+<ng-template #resultTemplate let-r="result" let-t="term">
+  <div class="text-truncate" [style.width.px]="search.offsetWidth - 48">
+    <ngb-highlight [result]="r.name" [term]="t"></ngb-highlight>
+  </div>
+</ng-template>
+
+<div class="home__container container-md px-5 mx-auto">
+  <div class="d-flex flex-row flex-fill">
+    <div class="col-12">
+      <h1 class="text-center font-weight-bold text-primary">iTrack</h1>
+      <span class="d-block text-center font-weight-bold mb-3 text-secondary"
+        >Todos as músicas em um só lugar!</span
+      >
+    </div>
+  </div>
+  <div class="d-flex flex-row">
+    <div class="col-sm-12">
+      <input
+        id="ff-search"
+        #search
+        type="text"
+        class="form-control"
+        [resultTemplate]="resultTemplate"
+        [ngbTypeahead]="onSearch"
+        placeholder="Pesquise o artista:"
+        [inputFormatter]="formatter"
+        (selectItem)="onSelectItem($event)"
+      />
+      <div class="container__searching-icon">
+        <i
+          *ngIf="isSearching"
+          class="fas fa-spin fa-circle-notch text-primary"
+          aria-hidden="true"
+        ></i>
+      </div>
+    </div>
+  </div>
+</div>

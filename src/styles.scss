@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700,900&display=swap");
+@import "scss/custom.scss";
+@import "~bootstrap/scss/bootstrap.scss";
+
+* {
+  font-family: "Lato", sans-serif;
+}
+
+.icon-rotate-45 {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}

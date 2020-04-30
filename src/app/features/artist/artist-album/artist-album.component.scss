@@ -1,0 +1,27 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+.album__cover-image {
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+}
+
+.icon-rotate-45 {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.album__tracks-list {
+  border-top: 1px solid #dee2e6;
+}
+
+@include media-breakpoint-up(md) {
+  .album__tracks-list {
+    border-top: none;
+  }
+}

@@ -1,0 +1,21 @@
+<div class="d-flex">
+  <div class="py-2 pr-2">
+    <div class="track__cover-container rounded">
+      <img *ngIf="track.coverImage" [src]="track.coverImage" class="rounded" />
+    </div>
+  </div>
+
+  <div
+    class="track__item d-flex flex-grow-1 py-2 justify-content-between align-items-center"
+    [ngClass]="{ track__item: index !== 0, 'track__item--md': true}"
+  >
+    <div class="d-flex flex-column">
+      <div>{{ track.name }}</div>
+      <small class="text-secondary">{{ track.artistName }}</small>
+    </div>
+
+    <small class="pl-2 align-middle text-secondary">
+      {{ track.timeMillis | date: "mm:ss" }}
+    </small>
+  </div>
+</div>
